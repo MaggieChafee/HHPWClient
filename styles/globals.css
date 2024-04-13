@@ -18,5 +18,15 @@ a {
 }
 
 body {
-  background-color: #88effd;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.btn-red {
+  border-radius: 25px !important;
+  background-color: #FF5757 !important;
+}
+
+.btn-blue {
+  background-color: #38B6FF;
 }
