@@ -17,7 +17,6 @@ function OrderItemCard({ orderItemObj, onUpdate }) {
 
   return (
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={orderItemObj.item.itemPicture} />
       <Card.Body>
         <Card.Title>{orderItemObj.item.itemName}</Card.Title>
         <Card.Subtitle>{orderItemObj.item.itemPrice}</Card.Subtitle>
@@ -38,7 +37,6 @@ OrderItemCard.propTypes = {
     item: PropTypes.shape({
       itemName: PropTypes.string,
       itemPrice: PropTypes.number,
-      itemPicture: PropTypes.string,
     }).isRequired,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,

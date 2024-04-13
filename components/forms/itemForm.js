@@ -23,6 +23,9 @@ function ItemForm() {
           <ItemCard key={item.id} itemObj={item} />
         ))}
       </div>
+      <div>
+        <h1>Selected Items</h1>
+      </div>
     </>
   );
 }
