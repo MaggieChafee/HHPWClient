@@ -36,17 +36,17 @@ const addItemsToOrder = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const deleteItemsToOrder = (orderItemId) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/orders/delete-item/${orderItemId}`, {
+const deleteItemFromOrder = (itemId, orderId) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/orders/${orderId}/delete-item/${itemId}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
     },
-  }).then((r) => r.json())
+  })
     .then((data) => resolve(data))
     .catch(reject);
 });
 
 export {
-  getOrderItemsForASingleOrder, getItems, addItemsToOrder, deleteItemsToOrder,
+  getOrderItemsForASingleOrder, getItems, addItemsToOrder, deleteItemFromOrder,
 };

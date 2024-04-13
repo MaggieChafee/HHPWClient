@@ -17,7 +17,7 @@ function ViewAllOrders() {
       <h1>All Orders</h1>
       <div>
         {orders.map((order) => (
-          <OrderCard key={order.id} orderObj={order} />
+          <OrderCard key={order.id} orderObj={order} onUpdate={getOrders} />
         ))}
       </div>
     </div>

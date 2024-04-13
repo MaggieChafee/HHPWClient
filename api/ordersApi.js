@@ -35,7 +35,7 @@ const deleteSingleOrder = (id) => new Promise((resolve, reject) => {
     headers: {
       'Content-Type': 'application/json',
     },
-  }).then((r) => r.json())
+  })
     .then((data) => resolve(data))
     .catch(reject);
 });

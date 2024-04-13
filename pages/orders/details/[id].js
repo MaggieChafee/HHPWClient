@@ -46,7 +46,7 @@ function ViewSingleOrder() {
       </div>
       <div>
         {items?.map((orderItem) => (
-          <ItemCard key={orderItem.id} itemObj={orderItem} />
+          <ItemCard key={orderItem.id} itemObj={orderItem} onUpdate={getOrdersItems} />
         ))}
       </div>
     </div>
