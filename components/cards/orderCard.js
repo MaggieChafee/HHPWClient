@@ -1,8 +1,14 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
+import { deleteSingleOrder } from '../../api/ordersApi';
 
-function OrderCard({ orderObj }) {
+function OrderCard({ orderObj, onUpdate }) {
+  const deleteThisOrder = () => {
+    if (window.confirm(`Do you want to delete this order for ${orderObj.name}?`)) {
+      deleteSingleOrder(orderObj.id).then(() => onUpdate());
+    }
+  };
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Body>
@@ -15,7 +21,7 @@ function OrderCard({ orderObj }) {
         </Card.Text>
         <Card.Link href={`/orders/details/${orderObj.id}`}>View</Card.Link>
         <Card.Link href="#">Edit</Card.Link>
-        <Card.Link href="#">Delete</Card.Link>
+        <Card.Link onClick={deleteThisOrder}>Delete</Card.Link>
       </Card.Body>
     </Card>
   );
@@ -30,6 +36,7 @@ OrderCard.propTypes = {
     orderType: PropTypes.string,
     orderOpen: PropTypes.bool,
   }).isRequired,
+  onUpdate: PropTypes.func.isRequired,
 };
 
 export default OrderCard;
