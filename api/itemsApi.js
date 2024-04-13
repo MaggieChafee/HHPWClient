@@ -20,8 +20,13 @@ const getOrderItemsForASingleOrder = (id) => new Promise((resolve, reject) => {
       'Content-Type': 'application/json',
     },
   }).then((r) => r.json())
-    .then((data) => resolve(data))
-    .catch(reject);
+    .then((data) => {
+      if (data) {
+        resolve(Object.values(data));
+      } else {
+        resolve([]);
+      }
+    }).catch(reject);
 });
 
 const addItemsToOrder = (payload) => new Promise((resolve, reject) => {

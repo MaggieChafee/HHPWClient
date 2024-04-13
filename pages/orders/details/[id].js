@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { getSingleOrder } from '../../../api/ordersApi';
 import { getOrderItemsForASingleOrder } from '../../../api/itemsApi';
-import ItemCard from '../../../components/cards/itemCard';
+import OrderItemCard from '../../../components/cards/orderItemCard';
 
 function ViewSingleOrder() {
   const [orderDetails, setOrderDetails] = useState({});
@@ -46,7 +46,7 @@ function ViewSingleOrder() {
       </div>
       <div>
         {items?.map((orderItem) => (
-          <ItemCard key={orderItem.id} itemObj={orderItem} onUpdate={getOrdersItems} />
+          <OrderItemCard key={orderItem.id} orderItemObj={orderItem} onUpdate={getOrdersItems} />
         ))}
       </div>
     </div>
