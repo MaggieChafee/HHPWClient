@@ -16,7 +16,7 @@ function Home() {
     >
       <h1>Hello {user.fbUser.displayName}! </h1>
       <br />
-      <Link passHref href="/orders/allOrders">
+      <Link passHref href="/orders/all">
         <Button class="btn-red" variant="dark">View All Orders</Button>
       </Link>
       <br />
