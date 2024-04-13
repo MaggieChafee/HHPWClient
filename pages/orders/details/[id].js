@@ -2,6 +2,7 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
+import Link from 'next/link';
 import { getSingleOrder } from '../../../api/ordersApi';
 import { getOrderItemsForASingleOrder } from '../../../api/itemsApi';
 import OrderItemCard from '../../../components/cards/orderItemCard';
@@ -41,6 +42,11 @@ function ViewSingleOrder() {
       </div>
       <div>
         <Button>Edit Order</Button>
+        <Link href={`../add/${id}`} passHref>
+          <Button>
+            Add Item to Order
+          </Button>
+        </Link>
         <Button>Delete</Button>
         <Button>Go to Payment</Button>
       </div>

@@ -7,7 +7,7 @@ import { deleteItemFromOrder } from '../../api/itemsApi';
 function OrderItemCard({ orderItemObj, onUpdate }) {
   const router = useRouter();
   const { id } = router.query;
-  console.warn(orderItemObj);
+
   const deleteThisItem = () => {
     const itemId = orderItemObj.id;
     if (window.confirm(`Do you want to delete ${orderItemObj.item.itemName} from this order?`)) {
