@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import getRevenue from '../api/revenueApi';
 
 export default function ViewRevenue() {
+  const [revenue, setRevenue] = useState(0);
+
+  const totalRevenue = () => {
+    getRevenue().then(setRevenue);
+  };
+
+  useEffect(() => {
+    totalRevenue();
+  });
+
   return (
     <div>
-      <h1>View All Orders</h1>
+      <h1>Total Sales to Date</h1>
+      <h4>{revenue}</h4>
     </div>
   );
 }

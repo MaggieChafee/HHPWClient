@@ -13,7 +13,7 @@ function OrderCard({ orderObj }) {
           {orderObj.email}
           {orderObj.orderType}
         </Card.Text>
-        <Card.Link href="#">View</Card.Link>
+        <Card.Link href={`/orders/details/${orderObj.id}`}>View</Card.Link>
         <Card.Link href="#">Edit</Card.Link>
         <Card.Link href="#">Delete</Card.Link>
       </Card.Body>
@@ -23,6 +23,7 @@ function OrderCard({ orderObj }) {
 
 OrderCard.propTypes = {
   orderObj: PropTypes.shape({
+    id: PropTypes.number,
     name: PropTypes.string,
     phoneNumber: PropTypes.string,
     email: PropTypes.string,
