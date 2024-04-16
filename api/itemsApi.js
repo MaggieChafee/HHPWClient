@@ -20,8 +20,13 @@ const getOrderItemsForASingleOrder = (id) => new Promise((resolve, reject) => {
       'Content-Type': 'application/json',
     },
   }).then((r) => r.json())
-    .then((data) => resolve(data))
-    .catch(reject);
+    .then((data) => {
+      if (data) {
+        resolve(Object.values(data));
+      } else {
+        resolve([]);
+      }
+    }).catch(reject);
 });
 
 const addItemsToOrder = (payload) => new Promise((resolve, reject) => {
@@ -36,8 +41,8 @@ const addItemsToOrder = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const deleteItemFromOrder = (itemId, orderId) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/orders/${orderId}/delete-item/${itemId}`, {
+const deleteItemFromOrder = (orderItemId) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/orders/delete-item/${orderItemId}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
