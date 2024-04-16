@@ -1,17 +1,12 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
-import { useRouter } from 'next/router';
 import { deleteItemFromOrder } from '../../api/itemsApi';
 
 function OrderItemCard({ orderItemObj, onUpdate }) {
-  const router = useRouter();
-  const { id } = router.query;
-
   const deleteThisItem = () => {
-    const itemId = orderItemObj.id;
     if (window.confirm(`Do you want to delete ${orderItemObj.item.itemName} from this order?`)) {
-      deleteItemFromOrder(itemId, id).then(() => onUpdate());
+      deleteItemFromOrder(orderItemObj.id).then(() => onUpdate());
     }
   };
 

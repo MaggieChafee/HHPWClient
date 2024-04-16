@@ -12,7 +12,7 @@ function ItemCard({ itemObj }) {
     e.preventDefault();
 
     const payload = { itemId: itemObj.id, orderId: id };
-    addItemsToOrder(payload);
+    addItemsToOrder(payload).then(() => router.push(`/orders/details/${id}`));
   };
 
   return (

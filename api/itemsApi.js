@@ -41,8 +41,8 @@ const addItemsToOrder = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const deleteItemFromOrder = (itemId, orderId) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/orders/${orderId}/delete-item/${itemId}`, {
+const deleteItemFromOrder = (orderItemId) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/orders/delete-item/${orderItemId}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
