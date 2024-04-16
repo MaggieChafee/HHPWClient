@@ -49,7 +49,9 @@ function ViewSingleOrder() {
             Add Item to Order
           </Button>
         </Link>
-        <Button>Go to Payment</Button>
+        <Link href={`../closeOrder/${id}`} passHref>
+          <Button>Go to Payment</Button>
+        </Link>
       </div>
       <div>
         {items?.map((orderItem) => (
