@@ -59,7 +59,7 @@ const updateOrder = (payload) => new Promise((resolve, reject) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(payload),
-  }).then((r) => r.json())
+  })
     .then((data) => resolve(data))
     .catch(reject);
 });

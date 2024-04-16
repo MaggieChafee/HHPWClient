@@ -3,8 +3,9 @@ import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useRouter } from 'next/router';
+import PropTypes from 'prop-types';
 import getOrderTypes from '../../api/orderTypeApi';
-import { createOrder } from '../../api/ordersApi';
+import { createOrder, updateOrder } from '../../api/ordersApi';
 
 const initialState = {
   name: '',
@@ -14,7 +15,7 @@ const initialState = {
   orderOpen: true,
 };
 
-function OrderForm() {
+function OrderForm({ orderObj }) {
   const [formInput, setFormInput] = useState(initialState);
   const [types, setTypes] = useState([]);
   const router = useRouter();
@@ -24,8 +25,9 @@ function OrderForm() {
   };
 
   useEffect(() => {
+    if (orderObj.id) setFormInput(orderObj);
     getTypes();
-  }, []);
+  }, [orderObj.id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,9 +41,12 @@ function OrderForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const payload = { ...formInput };
-    createOrder(payload).then(() => router.push('/orders/all'));
+    if (orderObj.id) {
+      updateOrder(formInput).then(() => router.push('/orders/all'));
+    } else {
+      const payload = { ...formInput };
+      createOrder(payload).then(() => router.push('/orders/all'));
+    }
   };
 
   return (
@@ -85,5 +90,20 @@ function OrderForm() {
     </Form>
   );
 }
+
+OrderForm.propTypes = {
+  orderObj: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    phoneNumber: PropTypes.string,
+    email: PropTypes.string,
+    orderType: PropTypes.string,
+    orderOpen: PropTypes.bool,
+  }),
+};
+
+OrderForm.defaultProps = {
+  orderObj: initialState,
+};
 
 export default OrderForm;

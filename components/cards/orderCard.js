@@ -20,7 +20,7 @@ function OrderCard({ orderObj, onUpdate }) {
           {orderObj.orderType}
         </Card.Text>
         <Card.Link href={`/orders/details/${orderObj.id}`}>View</Card.Link>
-        <Card.Link href="#">Edit</Card.Link>
+        <Card.Link href={`/orders/edit/${orderObj.id}`}>Edit</Card.Link>
         <Card.Link onClick={deleteThisOrder}>Delete</Card.Link>
       </Card.Body>
     </Card>

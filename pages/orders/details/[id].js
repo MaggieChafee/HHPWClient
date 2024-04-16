@@ -41,13 +41,14 @@ function ViewSingleOrder() {
         <p>{orderDetails.orderOpen ? 'OPEN' : 'CLOSED' }</p>
       </div>
       <div>
-        <Button>Edit Order</Button>
+        <Link href={`../edit/${id}`} passHref>
+          <Button>Edit Order</Button>
+        </Link>
         <Link href={`../add/${id}`} passHref>
           <Button>
             Add Item to Order
           </Button>
         </Link>
-        <Button>Delete</Button>
         <Button>Go to Payment</Button>
       </div>
       <div>
