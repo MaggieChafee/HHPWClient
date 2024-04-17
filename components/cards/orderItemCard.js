@@ -18,7 +18,6 @@ function OrderItemCard({ orderItemObj, onUpdate }) {
         <Card.Text>
           {orderItemObj.notes}
         </Card.Text>
-        <Card.Link href="#">Edit</Card.Link>
         <Card.Link onClick={deleteThisItem}>Delete</Card.Link>
       </Card.Body>
     </Card>

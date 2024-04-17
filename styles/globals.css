@@ -22,11 +22,67 @@ body {
   color: #ffffff;
 }
 
+.page-container {
+  margin: 5%;
+  gap: 10px;
+}
+
+.card-container {
+  margin: 5%;
+  gap: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-around;
+  gap: 10px;
+}
+
+.card-with-image {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-content {
+  flex-direction: column;
+}
+
+.open {
+  border-radius: 10px;
+  border-color: #FFCD1B;
+  border-width: 2px;
+  box-shadow: 0 0 4px 1px #FFCD1B,
+  inset 0 0 3px 1px #FFCD1B;
+}
+
+.closed {
+  border-radius: 10px;
+  border-width: 3px;
+  border-color: #CB204E;
+  box-shadow: 0 0 5px 1px #CB204E,
+  inset 0 0 3px 1px #CB204E;
+};
+
 .btn-red {
-  border-radius: 25px !important;
-  background-color: #FF5757 !important;
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: #CB204E;
+  box-shadow: 0 0 4px 1px #CB204E,
+  inset 0 0 3px 1px #CB204E;
+}
+
+.btn-yellow {
+  border-radius: 10px;
+  border-color: #FFCD1B;
+  border-width: 2px;
+  box-shadow: 0 0 4px 1px #FFCD1B,
+  inset 0 0 3px 1px #FFCD1B;
 }
 
 .btn-blue {
-  background-color: #38B6FF;
+  border-radius: 10px;
+  border-color: #72E2FF;
+  border-width: 2px;
+  box-shadow: 0 0 4px 1px #72E2FF,
+  inset 0 0 3px 1px #72E2FF;
 }

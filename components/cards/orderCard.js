@@ -9,11 +9,14 @@ function OrderCard({ orderObj, onUpdate }) {
       deleteSingleOrder(orderObj.id).then(() => onUpdate());
     }
   };
+
+  const openOrClosed = orderObj.orderOpen ? 'open' : 'closed';
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card className={openOrClosed} bg="dark" text="white" style={{ width: '18rem' }}>
       <Card.Body>
         <Card.Title>{orderObj.name}</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">{orderObj.orderOpen ? 'OPEN' : 'CLOSED'}</Card.Subtitle>
+        <br />
+        <Card.Subtitle text="white">{orderObj.orderOpen ? 'OPEN' : 'CLOSED'}</Card.Subtitle>
         <Card.Text>
           {orderObj.phoneNumber}
           {orderObj.email}

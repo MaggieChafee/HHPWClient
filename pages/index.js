@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Button } from 'react-bootstrap';
 import Link from 'next/link';
 import { useAuth } from '../utils/context/authContext';
@@ -14,18 +15,19 @@ function Home() {
         margin: '0 auto',
       }}
     >
+      <img src="/Logo.png" alt="logo" width="300" height="300" />
       <h1>Hello {user.fbUser.displayName}! </h1>
       <br />
       <Link passHref href="/orders/all">
-        <Button class="btn-red" variant="dark">View All Orders</Button>
+        <Button variant="dark">View All Orders</Button>
       </Link>
       <br />
       <Link passHref href="/orders/new">
-        <Button class="btn-red" variant="dark">Start a New Order</Button>
+        <Button variant="dark">Start a New Order</Button>
       </Link>
       <br />
       <Link passHref href="/revenue">
-        <Button class="btn-red" variant="dark">View Revenue</Button>
+        <Button variant="dark">View Revenue</Button>
       </Link>
     </div>
   );

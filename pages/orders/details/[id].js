@@ -27,7 +27,7 @@ function ViewSingleOrder() {
   }, [id]);
 
   return (
-    <div>
+    <div className="page-container">
       <h1>{orderDetails.name}</h1>
       <br />
       <div>

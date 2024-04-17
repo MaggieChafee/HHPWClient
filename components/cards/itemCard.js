@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
@@ -16,9 +17,9 @@ function ItemCard({ itemObj }) {
   };
 
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={itemObj.itemPicture} />
-      <Card.Body>
+    <Card className="card-with-image" style={{ width: '18rem' }}>
+      <img src={itemObj.itemPicture} alt="item" height="125" width="100" />
+      <Card.Body className="card-content">
         <Card.Title>{itemObj.itemName}</Card.Title>
         <Card.Subtitle>{itemObj.itemPrice}</Card.Subtitle>
         <Button onClick={handleSubmit}>
