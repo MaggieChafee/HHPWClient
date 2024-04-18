@@ -32,13 +32,13 @@ function ViewSingleOrder() {
       <br />
       <div>
         <h4>Customer Information</h4>
-        <p>{orderDetails.email}</p>
-        <p>{orderDetails.phoneNumber}</p>
+        <p>Email: {orderDetails.email}</p>
+        <p>Phone Number: {orderDetails.phoneNumber}</p>
       </div>
       <div>
-        <h4>Order Information</h4>
-        <p>{orderDetails.orderType}</p>
-        <p>{orderDetails.orderOpen ? 'OPEN' : 'CLOSED' }</p>
+        <h4>Order Information: </h4>
+        <p>Order Type: {orderDetails.orderType}</p>
+        <p>Order Status: {orderDetails.orderOpen ? 'OPEN' : 'CLOSED' }</p>
       </div>
       <div>
         <Link href={`../edit/${id}`} passHref>
@@ -53,7 +53,7 @@ function ViewSingleOrder() {
           <Button>Go to Payment</Button>
         </Link>
       </div>
-      <div>
+      <div className="card-container">
         {items?.map((orderItem) => (
           <OrderItemCard key={orderItem.id} orderItemObj={orderItem} onUpdate={getOrdersItems} />
         ))}

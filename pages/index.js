@@ -10,12 +10,14 @@ function Home() {
       className="text-center d-flex flex-column justify-content-center align-content-center"
       style={{
         height: '90vh',
-        padding: '30px',
+        padding: '5px',
         maxWidth: '600px',
         margin: '0 auto',
       }}
     >
-      <img src="/Logo.png" alt="logo" width="300" height="300" />
+      <div>
+        <img src="/Logo.png" alt="logo" width="250" height="250" />
+      </div>
       <h1>Hello {user.fbUser.displayName}! </h1>
       <br />
       <Link passHref href="/orders/all">

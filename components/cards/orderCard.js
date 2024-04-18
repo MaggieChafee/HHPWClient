@@ -1,6 +1,10 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import Card from 'react-bootstrap/Card';
+import { Card, Button } from 'react-bootstrap';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { deleteSingleOrder } from '../../api/ordersApi';
 
 function OrderCard({ orderObj, onUpdate }) {
@@ -10,21 +14,29 @@ function OrderCard({ orderObj, onUpdate }) {
     }
   };
 
+  const deleteBtn = orderObj.orderOpen ? <FontAwesomeIcon icon={faTrash} style={{ color: '#ffffff' }} /> : '';
+  const editBtn = orderObj.orderOpen ? <FontAwesomeIcon icon={faPen} style={{ color: '#ffffff' }} /> : '';
+
   const openOrClosed = orderObj.orderOpen ? 'open' : 'closed';
   return (
     <Card className={openOrClosed} bg="dark" text="white" style={{ width: '18rem' }}>
       <Card.Body>
         <Card.Title>{orderObj.name}</Card.Title>
-        <br />
         <Card.Subtitle text="white">{orderObj.orderOpen ? 'OPEN' : 'CLOSED'}</Card.Subtitle>
+        <br />
         <Card.Text>
-          {orderObj.phoneNumber}
-          {orderObj.email}
-          {orderObj.orderType}
+          {orderObj.orderType}<br />
+          {orderObj.phoneNumber}<br />
+          {orderObj.email}<br />
         </Card.Text>
-        <Card.Link href={`/orders/details/${orderObj.id}`}>View</Card.Link>
-        <Card.Link href={`/orders/edit/${orderObj.id}`}>Edit</Card.Link>
-        <Card.Link onClick={deleteThisOrder}>Delete</Card.Link>
+        <div className="btn-display">
+          <Link href={`/orders/details/${orderObj.id}`} passHref>
+            <Button variant="dark">View</Button>
+          </Link>
+          <div width="100" />
+          <Card.Link href={`/orders/edit/${orderObj.id}`}>{editBtn}</Card.Link>
+          <Card.Link onClick={deleteThisOrder}>{deleteBtn}</Card.Link>
+        </div>
       </Card.Body>
     </Card>
   );

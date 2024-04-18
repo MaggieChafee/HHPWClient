@@ -17,15 +17,15 @@ function ItemCard({ itemObj }) {
   };
 
   return (
-    <Card className="card-with-image" style={{ width: '18rem' }}>
-      <img src={itemObj.itemPicture} alt="item" height="125" width="100" />
+    <Card className="card-with-image" bg="dark" text="white" style={{ width: '20rem', height: '7rem' }}>
+      <img src={itemObj.itemPicture} alt="item" height="100" width="100" />
       <Card.Body className="card-content">
         <Card.Title>{itemObj.itemName}</Card.Title>
-        <Card.Subtitle>{itemObj.itemPrice}</Card.Subtitle>
-        <Button onClick={handleSubmit}>
-          Add To Order
-        </Button>
+        <Card.Subtitle>${itemObj.itemPrice}</Card.Subtitle>
       </Card.Body>
+      <Button style={{ width: '3rem' }} onClick={handleSubmit}>
+        +
+      </Button>
     </Card>
   );
 }
