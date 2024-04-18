@@ -16,14 +16,19 @@ function OrderCard({ orderObj, onUpdate }) {
 
   const deleteBtn = orderObj.orderOpen ? <FontAwesomeIcon icon={faTrash} style={{ color: '#ffffff' }} /> : '';
   const editBtn = orderObj.orderOpen ? <FontAwesomeIcon icon={faPen} style={{ color: '#ffffff' }} /> : '';
-
   const openOrClosed = orderObj.orderOpen ? 'open' : 'closed';
+
   return (
     <Card className={openOrClosed} bg="dark" text="white" style={{ width: '18rem' }}>
       <Card.Body>
-        <Card.Title>{orderObj.name}</Card.Title>
-        <Card.Subtitle text="white">{orderObj.orderOpen ? 'OPEN' : 'CLOSED'}</Card.Subtitle>
-        <br />
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <h4 style={{ width: '75%' }}>{orderObj.name}</h4>
+          <div style={{ width: '25%' }}>
+            <Card.Link href={`/orders/edit/${orderObj.id}`}>{editBtn}</Card.Link>
+            <Card.Link onClick={deleteThisOrder}>{deleteBtn}</Card.Link>
+          </div>
+        </div>
+        <Card.Text text="white"><b>Status:</b> {orderObj.orderOpen ? 'OPEN' : 'CLOSED'}</Card.Text>
         <Card.Text>
           {orderObj.orderType}<br />
           {orderObj.phoneNumber}<br />
@@ -33,9 +38,6 @@ function OrderCard({ orderObj, onUpdate }) {
           <Link href={`/orders/details/${orderObj.id}`} passHref>
             <Button variant="dark">View</Button>
           </Link>
-          <div width="100" />
-          <Card.Link href={`/orders/edit/${orderObj.id}`}>{editBtn}</Card.Link>
-          <Card.Link onClick={deleteThisOrder}>{deleteBtn}</Card.Link>
         </div>
       </Card.Body>
     </Card>
