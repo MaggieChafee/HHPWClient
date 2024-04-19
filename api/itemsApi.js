@@ -52,6 +52,29 @@ const deleteItemFromOrder = (orderItemId) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const updateOrderItem = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/order-item/edit/${payload.id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
+const getSingleOrderItem = (id) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/order-items/${id}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }).then((r) => r.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
 export {
-  getOrderItemsForASingleOrder, getItems, addItemsToOrder, deleteItemFromOrder,
+  getOrderItemsForASingleOrder, getItems, addItemsToOrder, deleteItemFromOrder, updateOrderItem, getSingleOrderItem,
 };

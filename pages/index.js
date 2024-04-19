@@ -18,15 +18,15 @@ function Home() {
       <h1>Hello {user.fbUser.displayName}! </h1>
       <br />
       <Link passHref href="/orders/all">
-        <Button>View All Orders</Button>
+        <Button variant="dark" className="open">View All Orders</Button>
       </Link>
       <br />
       <Link passHref href="/orders/new">
-        <Button>Start a New Order</Button>
+        <Button variant="dark" className="open">Start a New Order</Button>
       </Link>
       <br />
       <Link passHref href="/revenue">
-        <Button>View Revenue</Button>
+        <Button variant="dark" className="open">View Revenue</Button>
       </Link>
     </div>
   );

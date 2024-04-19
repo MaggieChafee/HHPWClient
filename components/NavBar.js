@@ -33,7 +33,7 @@ export default function NavBar() {
             <Link passHref href="/revenue">
               <Nav.Link>View Revenue</Nav.Link>
             </Link>
-            <Button variant="danger" onClick={signOut}>
+            <Button variant="dark" className="btn-order-card" onClick={signOut}>
               Sign Out
             </Button>
           </Nav>

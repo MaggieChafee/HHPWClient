@@ -34,10 +34,12 @@ body {
   grid-template-columns: 1fr 2fr;
 }
 
-.order-details-container {
+.order-details-container {  
   background-color: #ffffff;
+  color:#301934;
   border-radius: 10px;
   padding: 5%;
+  box-shadow: 10px 10px #FCA712;
 }
 
 .card-container {
@@ -57,12 +59,31 @@ body {
   display: flex;
   flex-direction: row;
   padding: 5px;
+  color: #FBF3D5;
+  background-color: #9c84c2;
+  border-radius: 10px;
+  border-color: #9c84c2;
+  box-shadow: 10px 10px #301934;
 }
 
 .card-content {
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+
+.btn-order-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.item {
+  color:#301934;
+  border-style: solid;
+  border-color: #9c84c2;
+  border-radius: 10px;
+  border-width: 4px;
 }
 
 .open {
@@ -81,14 +102,16 @@ body {
   box-shadow: 10px 10px #301934;
 };
 
-.btn-order-details {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2px;
-}
-
 .btn-order-card {
   color:#FBF3D5;
+  background-color: #301934;
+  border-color: #301934;
+  border-radius: 10px;
+  border-width: 2px;
+}
+
+.btn-purple {
+  color:#ffffff;
   background-color: #301934;
   border-color: #301934;
   border-radius: 10px;

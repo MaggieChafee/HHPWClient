@@ -50,7 +50,7 @@ function ViewSingleOrder() {
         <div className="btn-order-details"> {orderDetails.orderOpen ? (
           <>
             <Link href={`../edit/${id}`} passHref>
-              <Button>Edit Order</Button>
+              <Button variant="dark" className="btn-purple">Edit Order</Button>
             </Link>
           </>
         ) : ''}
@@ -62,12 +62,12 @@ function ViewSingleOrder() {
         <div className="btn-order-details"> {orderDetails.orderOpen ? (
           <>
             <Link href={`../add/${id}`} passHref>
-              <Button>
+              <Button variant="dark" className="btn-purple" style={{ width: '18rem' }}>
                 Add Item to Order
               </Button>
             </Link>
             <Link href={`../closeOrder/${id}`} passHref>
-              <Button>
+              <Button variant="dark" className="btn-purple" style={{ width: '18rem' }}>
                 Go to Payment
               </Button>
             </Link>
