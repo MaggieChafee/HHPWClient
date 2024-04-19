@@ -34,7 +34,7 @@ function ViewSingleOrder() {
 
   return (
     <div className="page-container-order-details">
-      <div>
+      <div className="order-details-container">
         <h1>{orderDetails.name}</h1>
         <br />
         <div>
@@ -56,8 +56,7 @@ function ViewSingleOrder() {
         ) : ''}
         </div>
       </div>
-      <div>
-        <div style={{ height: '75px' }} />
+      <div className="order-details-container">
         <h4>Order Total: ${total}</h4>
         <div style={{ height: '15px' }} />
         <div className="btn-order-details"> {orderDetails.orderOpen ? (

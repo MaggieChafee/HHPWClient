@@ -15,21 +15,18 @@ function Home() {
         margin: '0 auto',
       }}
     >
-      <div>
-        <img src="/Logo.png" alt="logo" width="250" height="250" />
-      </div>
       <h1>Hello {user.fbUser.displayName}! </h1>
       <br />
       <Link passHref href="/orders/all">
-        <Button variant="dark">View All Orders</Button>
+        <Button>View All Orders</Button>
       </Link>
       <br />
       <Link passHref href="/orders/new">
-        <Button variant="dark">Start a New Order</Button>
+        <Button>Start a New Order</Button>
       </Link>
       <br />
       <Link passHref href="/revenue">
-        <Button variant="dark">View Revenue</Button>
+        <Button>View Revenue</Button>
       </Link>
     </div>
   );
