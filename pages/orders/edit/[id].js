@@ -14,7 +14,7 @@ function EditOrderDetails() {
 
   return (
     <>
-      <div>
+      <div className="page-container">
         <h1>Edit Order</h1>
         <OrderForm orderObj={editOrder} />
       </div>

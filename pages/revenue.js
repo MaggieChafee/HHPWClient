@@ -13,9 +13,11 @@ export default function ViewRevenue() {
   });
 
   return (
-    <div>
-      <h1>Total Sales to Date</h1>
-      <h4>{revenue}</h4>
+    <div className="page-container">
+      <div className="order-details-container">
+        <h1>Total Sales to Date</h1>
+        <h4>${revenue}</h4>
+      </div>
     </div>
   );
 }

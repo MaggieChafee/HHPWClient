@@ -13,9 +13,8 @@ function ViewAllOrders() {
   }, []);
 
   return (
-    <div>
-      <h1>All Orders</h1>
-      <div>
+    <div className="page-container">
+      <div className="card-container">
         {orders.map((order) => (
           <OrderCard key={order.id} orderObj={order} onUpdate={getOrders} />
         ))}

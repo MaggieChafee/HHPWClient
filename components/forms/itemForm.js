@@ -15,16 +15,10 @@ function ItemForm() {
 
   return (
     <>
-      <div>
-        <h1>Add an Item</h1>
-      </div>
-      <div>
+      <div className="card-container">
         {items.map((item) => (
           <ItemCard key={item.id} itemObj={item} />
         ))}
-      </div>
-      <div>
-        <h1>Selected Items</h1>
       </div>
     </>
   );

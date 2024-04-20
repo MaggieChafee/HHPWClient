@@ -61,13 +61,13 @@ function PaymentForm({ orderObj }) {
         <Form.Group className="mb-3">
           <Form.Label htmlFor="inputPassword5">Payment Type</Form.Label>
           <Form.Select type="select" aria-label="Default select example" name="paymentType" value={formInput.paymentType} onChange={handleChange}>
-            <option>Open this select menu</option>
+            <option>Choose Payment Type</option>
             {types.map((pt) => (
               <option key={pt.id} value={pt.name}>{pt.name}</option>
             ))}
           </Form.Select>
         </Form.Group>
-        <Button variant="primary" type="submit" onClick={handleSubmit}>
+        <Button variant="dark" className="btn-order-card" type="submit" onClick={handleSubmit}>
           Submit
         </Button>
       </Form>

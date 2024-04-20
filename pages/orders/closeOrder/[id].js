@@ -14,7 +14,7 @@ function CloseOrder() {
 
   return (
     <>
-      <div>
+      <div className="page-container">
         <h1>Close Order</h1>
         <PaymentForm orderObj={closeOrder} />
       </div>

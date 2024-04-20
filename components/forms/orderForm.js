@@ -84,7 +84,7 @@ function OrderForm({ orderObj }) {
             ))
           }
       </Form.Select>
-      <Button variant="primary" type="submit" onClick={handleSubmit}>
+      <Button variant="dark" className="btn-order-card" type="submit" onClick={handleSubmit}>
         Submit
       </Button>
     </Form>
