@@ -23,7 +23,7 @@ function ItemCard({ itemObj }) {
         <Card.Title>{itemObj.itemName}</Card.Title>
         <Card.Subtitle>${itemObj.itemPrice}</Card.Subtitle>
       </Card.Body>
-      <Button variant="dark" className="btn-purple" style={{ width: '3rem' }} onClick={handleSubmit}>
+      <Button variant="dark" className="btn-order-card" style={{ width: '3rem' }} onClick={handleSubmit}>
         +
       </Button>
     </Card>

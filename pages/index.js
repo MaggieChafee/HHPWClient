@@ -9,7 +9,7 @@ function Home() {
     <div
       className="text-center d-flex flex-column justify-content-center align-content-center"
       style={{
-        height: '90vh',
+        height: '75vh',
         padding: '5px',
         maxWidth: '600px',
         margin: '0 auto',

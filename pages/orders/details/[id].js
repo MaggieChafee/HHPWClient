@@ -14,22 +14,23 @@ function ViewSingleOrder() {
   const router = useRouter();
   const { id } = router.query;
 
-  const getDetails = () => {
-    getSingleOrder(id).then(setOrderDetails);
-  };
-
   const getTotal = () => {
     getOrderTotal(id).then(setTotal);
   };
 
+  const getDetails = () => {
+    getSingleOrder(id).then(setOrderDetails);
+  };
+
   const getOrdersItems = () => {
+    getTotal();
     getOrderItemsForASingleOrder(id).then(setItems);
   };
 
   useEffect(() => {
     getDetails();
     getOrdersItems();
-    getTotal();
+    // getTotal();
   }, [id]);
 
   return (
@@ -50,7 +51,7 @@ function ViewSingleOrder() {
         <div className="btn-order-details"> {orderDetails.orderOpen ? (
           <>
             <Link href={`../edit/${id}`} passHref>
-              <Button variant="dark" className="btn-purple">Edit Order</Button>
+              <Button variant="dark" className="btn-order-card">Edit Order</Button>
             </Link>
           </>
         ) : ''}
@@ -62,12 +63,12 @@ function ViewSingleOrder() {
         <div className="btn-order-details"> {orderDetails.orderOpen ? (
           <>
             <Link href={`../add/${id}`} passHref>
-              <Button variant="dark" className="btn-purple" style={{ width: '18rem' }}>
+              <Button variant="dark" className="btn-order-card" style={{ width: '18rem' }}>
                 Add Item to Order
               </Button>
             </Link>
             <Link href={`../closeOrder/${id}`} passHref>
-              <Button variant="dark" className="btn-purple" style={{ width: '18rem' }}>
+              <Button variant="dark" className="btn-order-card" style={{ width: '18rem' }}>
                 Go to Payment
               </Button>
             </Link>

@@ -5,12 +5,11 @@ import { signIn } from '../utils/auth';
 
 function Signin() {
   return (
-    <div className="text-center d-flex flex-column justify-content-center align-items-center" style={{ height: '100vh', padding: '30px' }}>
-      <img src="/Logo.png" alt="logo" className="nav-logo" width="400" height="400" /><br /><br />
-
+    <div className="text-center d-flex flex-column justify-content-center align-items-center" style={{ height: '75vh', padding: '30px' }}>
+      <img src="/Logo.png" alt="logo" className="nav-logo" width="200" height="200" /><br /><br />
       <h1>Hi there!</h1>
       <p>Click the button below to login!</p>
-      <Button type="button" size="lg" className="copy-btn" onClick={signIn}>
+      <Button type="button" size="lg" className="btn-order-card" variant="dark" onClick={signIn}>
         Sign In
       </Button>
     </div>

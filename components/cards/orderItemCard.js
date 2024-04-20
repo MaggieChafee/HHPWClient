@@ -52,10 +52,10 @@ function OrderItemCard({ orderItemObj, onUpdate }) {
             {orderItemObj.notes}
           </Card.Text>
           <div className="btn-order-details">
-            <Button variant="dark" className="btn-purple" onClick={deleteThisItem}>
+            <Button variant="dark" className="btn-order-card" onClick={deleteThisItem}>
               Delete
             </Button>
-            <Button variant="dark" className="btn-purple" onClick={handleShow}>
+            <Button variant="dark" className="btn-order-card" onClick={handleShow}>
               Edit
             </Button>
           </div>
@@ -65,12 +65,14 @@ function OrderItemCard({ orderItemObj, onUpdate }) {
         <Modal.Header closeButton>
           <Modal.Title>{orderItemObj.item.itemName} ${orderItemObj.item.itemPrice}</Modal.Title>
         </Modal.Header>
-        <Form>
-          <Form.Label>Add Note</Form.Label>
-          <Form.Control type="text-area" name="notes" value={formInput.notes} onChange={handleChange} />
-        </Form>
+        <div>
+          <Form className="modal-form">
+            <Form.Label>Add Note</Form.Label>
+            <Form.Control type="text-area" name="notes" value={formInput.notes} onChange={handleChange} />
+          </Form>
+        </div>
         <Modal.Footer>
-          <Button variant="dark" className="btn-purple" onClick={handleSubmit}>Save</Button>
+          <Button variant="dark" className="btn-order-card" onClick={handleSubmit}>Save</Button>
         </Modal.Footer>
       </Modal>
     </>
